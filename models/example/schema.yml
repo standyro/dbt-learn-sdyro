@@ -1,21 +1,20 @@
-
 version: 2
 
 models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: customers
+    description: A final table
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+    columns:
+        - name: customer_id
+          description: This is a unique identifier for the customer
+          tests:
+              - unique
+              - not_null
+        - name: first_name
+          description: First name
+          tests:
+              - not_null
+        - name: last_name
+          description: Last name
+          tests:
+              - not_null
